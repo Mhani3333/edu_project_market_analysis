@@ -10,7 +10,7 @@ the key challenge is determining how to effectively allocate resources to attrac
 4) The current age range is set between 18-31. Can this range be further narrowed?
 
 ## Data Source
-Information collected from an awareness campaign where participants visited the project's website and filled out a form with essential data used for this analysis.
++400 Students' Information collected from an awareness campaign where participants visited the project's website and filled out a form with essential data used for this analysis.
 
 ## Following an extensive market analysis, several important insights have emerged
 1) Most of students from Yemen, Syria, and Sudan who can afford to live abroad have often already left their home countries due to ongoing conflicts and challenging economic conditions. [Those still residing in these countries are likely seeking scholarships], which the business does not currently offer.

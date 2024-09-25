@@ -27,8 +27,7 @@ Given the available insights and the limited marketing resources, it is more cos
 ## Finally, Risk Factors of Targeting Yemen, Syria, and Sudan Directly
 Marketing directly to students in Yemen, Syria, and Sudan carries significant risks. The students in these countries are more likely to be seeking scholarship opportunities, which are not part of the current service offerings.
 
-## Attached Tableau Viz
+## Attached Tableau and R Viz
 1) Pie Chart for Ratio between Saudi and non-Saudi students
 2) Map of top cities recommended for offline marketing activities
-3) Pie chart of Gender Ratio
-4) Bar Chart of Age
+3) Bar Chart of Age colored by Gender

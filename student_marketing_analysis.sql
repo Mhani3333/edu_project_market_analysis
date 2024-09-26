@@ -20,3 +20,29 @@ SELECT
     ROUND((student_count * 100.0 / total_students), 2) AS percentage
 FROM CountryCounts, TotalCounts
 ORDER BY student_count DESC;
+
+
+/* Next step is knowing the ratio of gender and age frames, to target audience more effiently*/
+
+/*Forming CTE of how many male or female student in each age frame (-17 or 17-24 or +24) */
+WITH GenderAge AS 
+	(
+	SELECT gender, 
+	CASE WHEN EXTRACT(YEAR FROM AGE(current_date, date_of_birth)) BETWEEN 17 AND 24 THEN '17-24'
+	WHEN EXTRACT (YEAR FROM AGE(current_date, date_of_birth)) > 24 THEN '+24'
+	ELSE '-17' 
+	END AS age_frame,
+	COUNT (*) AS count_age
+FROM students
+GROUP BY gender, age_frame),
+/* Then forming another CTE of total number of students */	
+	TotalCounts AS 
+	(
+    SELECT COUNT(*) AS total_students
+    FROM students
+	)
+/* Finally combinig both CTEs to get the ratio of (how many male or female in each age frame:total students) */	
+SELECT gender, age_frame, 
+	ROUND((count_age*100/total_students), 2) AS percentage
+FROM GenderAge, TotalCounts
+ORDER BY percentage DESC

@@ -1,3 +1,18 @@
+/*Creating the table with the following query*/
+CREATE TABLE public.students
+(
+    first_name varchar(50),
+    date_of_birth date,
+    gender char(6),
+    nationality varchar(50),
+    city_of_residence varchar(100),
+    desired_studying_field varchar(50),
+    education_cert varchar(100),
+    score_in_percentage real
+)
+TABLESPACE pg_default;
+/*Then importing data from the csv file into this table*/
+
 WITH TotalCounts AS
 	( SELECT COUNT(*) AS total_students
     FROM students ),

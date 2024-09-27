@@ -8,6 +8,7 @@ the key challenge is determining how to effectively allocate resources to attrac
 2) Which cities in Saudi Arabia should be prioritized for maximum impact if traditional marketing efforts will be involved, like school visits, educational exhibitions, or higher education events?
 3) What is the gender ratio of the targeted market (a way to determine family influence factor into decision-making for studying abroad)?
 4) The current age range is set between 18-31. Can this range be further narrowed?
+5) What are most interesting studying fields for targeted students to design a proper campaign?
 
 ## Data Source
 +400 Students' Information collected from an awareness campaign where participants visited the project's website and filled out a form with essential data used for this analysis.
@@ -27,7 +28,8 @@ Given the available insights and the limited marketing resources, it is more cos
 ## Finally, Risk Factors of Targeting Yemen, Syria, and Sudan Directly
 Marketing directly to students in Yemen, Syria, and Sudan carries significant risks. The students in these countries are more likely to be seeking scholarship opportunities, which are not part of the current service offerings.
 
-## Attached Tableau and R Viz
+## Attached Tableau Viz
 1) Pie Chart for Ratio between Saudi and non-Saudi students
 2) Map of top cities recommended for offline marketing activities
 3) Bar Chart of Age colored by Gender
+4) Pie Chart for Preferred Studying Fields

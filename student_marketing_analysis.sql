@@ -13,6 +13,13 @@ CREATE TABLE public.students
 TABLESPACE pg_default;
 /*Then importing data from the csv file into this table*/
 
+/*
+The analysis involves calculating the proportion of each parameter relative to the total number of students.
+This is done by creating (CTEs) for both the total student count and each individual parameter.
+The key parameters to be analyzed are [Nationality - City of Residence - Gender - Age - Preferred Field of Study]
+*/
+
+/*First Parameter: Nationality*/
 WITH TotalCounts AS
 	( SELECT COUNT(*) AS total_students
     FROM students ),
@@ -40,6 +47,32 @@ LIMIT 3;
 */
 
 
+
+/*Second Parameter: City of Residence*/
+WITH TotalCounts AS (
+    SELECT COUNT(*) AS total_students
+    FROM students ),
+students_in_city AS (
+	SELECT city_of_residence, count (*) AS stu_count
+	FROM students
+	GROUP BY city_of_residence )
+SELECT city_of_residence,
+	ROUND(stu_count*100/total_students) AS cities_ratio
+FROM students_in_city, TotalCounts
+ORDER BY cities_ratio DESC
+LIMIT 3;
+/*
+Sample data:
+   | city_of_residence | cities_ratio |
+   |-------------------|--------------|
+   | Riyadh, KSA       | 35           |
+   | Jeddah, KSA       | 30           |
+   | Medina, KSA       | 9            |
+*/
+
+
+
+/*Third Parameter: Gender and Age*/
 WITH GenderAge AS 
 	( SELECT gender, 
 	CASE WHEN EXTRACT(YEAR FROM AGE(current_date, date_of_birth)) BETWEEN 17 AND 24 THEN '17-24'
@@ -69,29 +102,7 @@ Sample data:
 
 
 
-WITH TotalCounts AS (
-    SELECT COUNT(*) AS total_students
-    FROM students ),
-students_in_city AS (
-	SELECT city_of_residence, count (*) AS stu_count
-	FROM students
-	GROUP BY city_of_residence )
-SELECT city_of_residence,
-	ROUND(stu_count*100/total_students) AS cities_ratio
-FROM students_in_city, TotalCounts
-ORDER BY cities_ratio DESC
-LIMIT 3;
-/*
-Sample data:
-   | city_of_residence | cities_ratio |
-   |-------------------|--------------|
-   | Riyadh, KSA       | 35           |
-   | Jeddah, KSA       | 30           |
-   | Medina, KSA       | 9            |
-*/
-
-
-
+/*Fourth Parameter: Preffered Studying Field*/
 WITH TotalCounts AS (
     SELECT COUNT(*) AS total_students
     FROM students ),

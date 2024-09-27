@@ -28,6 +28,13 @@ Given the available insights and the limited marketing resources, it is more cos
 ## Finally, Risk Factors of Targeting Yemen, Syria, and Sudan Directly
 Marketing directly to students in Yemen, Syria, and Sudan carries significant risks. The students in these countries are more likely to be seeking scholarship opportunities, which are not part of the current service offerings.
 
+# Results:
+- A 24:76 ratio of Saudi to non-Saudi students suggests focusing on the Saudi market would be cost-effective given limited resources in first season.
+- 65% of students are from Riyadh and Jeddah, making these cities ideal for targeted traditional marketing.
+- 86% of students are aged 17-24, allowing the age range to be narrowed from 18-31 to 17-24.
+- 59% of interested students are female.
+- 50% are interested in studying medicine, 17% in engineering, and 33% in other fields.
+  
 ## Attached Tableau Viz
 1) Pie Chart for Ratio between Saudi and non-Saudi students
 2) Map of top cities recommended for offline marketing activities

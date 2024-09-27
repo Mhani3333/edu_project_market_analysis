@@ -13,8 +13,16 @@ SELECT
     nationality,
     ROUND(student_count * 100.0 / total_students) AS nationality_ratio
 FROM CountryCounts, TotalCounts
-ORDER BY student_count DESC;
-
+ORDER BY student_count DESC
+LIMIT 3;
+/*
+ Sample data:
+   | nationality   | nationality_ratio |
+   |---------------|-------------------|
+   | Other         | 76                |
+   | Saudi Arabia  | 24                |
+   | Sudan         | 20                |
+*/
 
 
 WITH GenderAge AS 
@@ -33,6 +41,16 @@ SELECT gender, age_frame,
 	ROUND((count_age*100/total_students)) AS gender_age_ratio
 FROM GenderAge, TotalCounts
 ORDER BY gender_age_ratio DESC
+LIMIT 3;
+
+/*
+Sample data:
+   | gender  | age_frame | gender_age_ratio |
+   |---------|-----------|------------------|
+   | Female  | 17-24     | 56               |
+   | Male    | 17-24     | 30               |
+   | Male    | +24       | 7                |
+*/
 
 
 
@@ -47,6 +65,15 @@ SELECT city_of_residence,
 	ROUND(stu_count*100/total_students) AS cities_ratio
 FROM students_in_city, TotalCounts
 ORDER BY cities_ratio DESC
+LIMIT 3;
+/*
+Sample data:
+   | city_of_residence | cities_ratio |
+   |-------------------|--------------|
+   | Riyadh, KSA       | 35           |
+   | Jeddah, KSA       | 30           |
+   | Medina, KSA       | 9            |
+*/
 
 
 
@@ -61,3 +88,13 @@ SELECT desired_studying_field,
 	ROUND(fields_count*100/total_students) AS fields_ratio
 FROM TotalCounts, StudyFields
 ORDER BY fields_ratio DESC
+LIMIT 3;
+
+/*
+Sample data:
+   | desired_studying_field | fields_ratio |
+   |------------------------|--------------|
+   | Medicine               | 50           |
+   | Engineering            | 17           |
+   | Other                  | 15           |
+*/
